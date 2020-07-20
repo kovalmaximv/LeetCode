@@ -1,14 +1,10 @@
-import Sort.Easy.MatrixCellsDistanceOrder;
+import Strings.Medium.GenerateParentheses;
 
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] ans = MatrixCellsDistanceOrder.allCellsDistOrder(2, 3, 1, 2);
+        GenerateParentheses task = new GenerateParentheses();
 
-        Arrays.stream(ans).forEachOrdered(arr -> {
-            System.out.println(Arrays.toString(arr));
-        });
-
+        System.out.println(task.generateParenthesis(2));
     }
 }
