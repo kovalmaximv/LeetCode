@@ -1,10 +1,10 @@
-import Strings.Medium.GenerateParentheses;
+import Array.Medium.CountNumberTeams;
 
 
 public class Main {
     public static void main(String[] args) {
-        GenerateParentheses task = new GenerateParentheses();
+        CountNumberTeams task = new CountNumberTeams();
 
-        System.out.println(task.generateParenthesis(2));
+        System.out.println(task.numTeams(new int[]{}));
     }
 }
