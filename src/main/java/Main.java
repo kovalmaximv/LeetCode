@@ -1,10 +1,11 @@
-import Array.Medium.CountNumberTeams;
+import HashTable.Medium.ValidSudoku;
+import Strings.Medium.NumberSubstringsWithOnly1;
 
 
 public class Main {
     public static void main(String[] args) {
-        CountNumberTeams task = new CountNumberTeams();
+        NumberSubstringsWithOnly1 task = new NumberSubstringsWithOnly1();
 
-        System.out.println(task.numTeams(new int[]{}));
+        System.out.println(task.numSub("10101"));
     }
 }
