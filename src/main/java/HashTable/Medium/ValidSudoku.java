@@ -1,51 +1,36 @@
 package HashTable.Medium;
 
-import java.util.HashSet;
-import java.util.Set;
-
 // https://leetcode.com/problems/valid-sudoku/
 // Medium
-// Problem: 0
-// #NEEDSOLUTION: 23.07 (use byte)
+// Problem: 1
 
 public class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {
+        int[] xAxis = new int[9];
+        int[] yAxis = new int[9];
+        int[] cubes = new int[9];
+
         for (int i = 0; i < board.length; i++) {
-            Set<Character> xSet = new HashSet<>();
-            Set<Character> ySet = new HashSet<>();
-
             for (int j = 0; j < board[i].length; j++) {
-                if (!updateSet(xSet, board[i][j])) {
-                    return false;
+                if (board[i][j] == '.') {
+                    continue;
                 }
-                if (!updateSet(ySet, board[j][i])) {
+                int cube_i = (j/3)*3 + (i/3);
+                int byte_board = 1 << (board[i][j] - '0');
+                if (
+                    (xAxis[i] & byte_board) > 0 ||
+                    (yAxis[j] & byte_board) > 0 ||
+                    (cubes[cube_i] & byte_board) > 0
+                ) {
                     return false;
                 }
 
-                if (i % 3 == 1 && j % 3 == 1) {
-                    Set<Character> cubeSet = new HashSet<>();
-                    for (int i0 = i - 1; i0 < i + 2; i0++) {
-                        for (int j0 = j - 1; j0 < j + 2; j0++) {
-                            if (!updateSet(cubeSet, board[i0][j0])) {
-                                return false;
-                            }
-                        }
-                    }
-                }
+                xAxis[i] |= byte_board;
+                yAxis[j] |= byte_board;
+                cubes[cube_i] |= byte_board;
             }
         }
 
-        return true;
-    }
-
-    private boolean updateSet(Set<Character> set, Character character){
-        if (character != '.') {
-            if (set.contains(character)) {
-                return false;
-            }
-
-            set.add(character);
-        }
         return true;
     }
 }

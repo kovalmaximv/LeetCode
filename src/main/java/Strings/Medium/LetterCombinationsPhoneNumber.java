@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 // https://leetcode.com/problems/letter-combinations-of-a-phone-number/solution/
-// #NEEDSOLUTION TODAY
+// Medium
+// Problem: 1
 
 public class LetterCombinationsPhoneNumber {
     Map<Integer, String[]> phone = new HashMap<>() {{
