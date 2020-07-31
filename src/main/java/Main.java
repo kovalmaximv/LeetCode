@@ -1,10 +1,12 @@
-import Array.Easy.LuckyNumbersMatrix;
+import HashTable.Medium.AvoidFloodTheCity;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        LuckyNumbersMatrix task = new LuckyNumbersMatrix();
-        System.out.println(task.luckyNumbers(new int[][]{
-                {1,10,4,2},{9,3,8,7},{15,16,17,12}
-        }));
+        AvoidFloodTheCity task = new AvoidFloodTheCity();
+        System.out.println(Arrays.toString(task.avoidFlood(
+                new int[]{2,3,0,0,3,1,0,1,0,2,2}
+        )));
     }
 }
