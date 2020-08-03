@@ -1,12 +1,8 @@
-import HashTable.Medium.AvoidFloodTheCity;
-import Strings.Medium.NumberGoodWaysSplitString;
-
-import java.util.Arrays;
-
+import DynamicProgramming.Hard.StoneGameIV;
 
 public class Main {
     public static void main(String[] args) {
-        NumberGoodWaysSplitString task = new NumberGoodWaysSplitString();
-        System.out.println(task.numSplits("aaaaa"));
+        StoneGameIV task = new StoneGameIV();
+        System.out.println(task.winnerSquareGame(7));
     }
 }
