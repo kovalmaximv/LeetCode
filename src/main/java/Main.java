@@ -1,4 +1,4 @@
-import Stack.Medium.CheckWordValidAfterSubstitutions;
+import LeetCode.Stack.Medium.CheckWordValidAfterSubstitutions;
 
 public class Main {
     public static void main(String[] args) {
