@@ -1,8 +1,8 @@
-import LeetCode.Stack.Medium.CheckWordValidAfterSubstitutions;
+import LeetCode.Array.Medium.MinimumSizeSubarraySum;
 
 public class Main {
     public static void main(String[] args) {
-        CheckWordValidAfterSubstitutions task = new CheckWordValidAfterSubstitutions();
-        System.out.println(task.isValid("cababc"));
+        MinimumSizeSubarraySum task = new MinimumSizeSubarraySum();
+        System.out.println(task.minSubArrayLen(7, new int[] {}));
     }
 }
