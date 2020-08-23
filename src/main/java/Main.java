@@ -1,9 +1,8 @@
-import LeetCode.HashTable.Easy.IsomorphicStrings;
-import LeetCode.Math.Easy.CountPrimes;
+import LeetCode.HashTable.Easy.HappyNumber;
 
 public class Main {
     public static void main(String[] args) {
-        CountPrimes task = new CountPrimes();
-        System.out.println(task.countPrimes(3));
+        HappyNumber task = new HappyNumber();
+        System.out.println(task.isHappy(1));
     }
 }
