@@ -1,8 +1,8 @@
-import LeetCode.HashTable.Easy.HappyNumber;
+import LeetCode.Strings.Hard.ShortestPalindrome;
 
 public class Main {
     public static void main(String[] args) {
-        HappyNumber task = new HappyNumber();
-        System.out.println(task.isHappy(1));
+        ShortestPalindrome task = new ShortestPalindrome();
+        System.out.println('.' - 'a');
     }
 }
