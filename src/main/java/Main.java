@@ -1,8 +1,8 @@
-import LeetCode.Strings.Hard.ShortestPalindrome;
+import LeetCode.DynamicProgramming.Medium.HouseRobberII;
 
 public class Main {
     public static void main(String[] args) {
-        ShortestPalindrome task = new ShortestPalindrome();
-        System.out.println('.' - 'a');
+        HouseRobberII task = new HouseRobberII();
+        System.out.println(task.rob(new int[]{}));
     }
 }
