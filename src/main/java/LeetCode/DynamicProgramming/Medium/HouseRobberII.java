@@ -9,7 +9,7 @@ public class HouseRobberII {
         if (nums.length == 1) {
             return nums[0];
         }
-        
+
         memo = new int[nums.length];
         Arrays.fill(memo, -1);
         start = 0;
