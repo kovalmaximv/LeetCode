@@ -15,6 +15,10 @@ public class Graph {
     boolean[] discovered;
     int[] parent;
     boolean directed;
+    boolean finished;
+    int time;
+    int[] entryTime;
+    int[] finishTime;
 
     public static Graph getGraphByFile(String filename) throws FileNotFoundException {
         File file = new File(filename);
@@ -43,6 +47,10 @@ public class Graph {
         discovered = new boolean[vertexNum];
         parent = new int[vertexNum];
         directed = false;
+        finished = false;
+        time = 0;
+        entryTime = new int[vertexNum];
+        finishTime = new int[vertexNum];
 
         for (int i = 0; i < vertexNum; i++) {
             parent[i] = -1;
