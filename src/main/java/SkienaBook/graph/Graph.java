@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -28,12 +29,15 @@ public class Graph {
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             int vertex = Integer.parseInt(line.substring(0, 1)) - 1;
-            List<Integer> linkedVertex = Arrays
-                    .stream(line.substring(2).split(","))
-                    .mapToInt(Integer::parseInt)
-                    .boxed()
-                    .map(x -> x - 1)
-                    .collect(Collectors.toList());
+            List<Integer> linkedVertex = new LinkedList<>();
+            if (!line.substring(2).equals("")) {
+                linkedVertex = Arrays
+                        .stream(line.substring(2).split(","))
+                        .mapToInt(Integer::parseInt)
+                        .boxed()
+                        .map(x -> x - 1)
+                        .collect(Collectors.toList());
+            }
             graph.links.get(vertex).addAll(linkedVertex);
         }
 
@@ -56,5 +60,13 @@ public class Graph {
             parent[i] = -1;
             links.add(new ArrayList<>());
         }
+    }
+
+    public EdgeType getEdgeType(Integer vertexFrom, Integer vertexTo) {
+        if (parent[vertexTo] == vertexFrom) return EdgeType.TREE;
+        if (discovered[vertexTo] && !processed[vertexTo]) return EdgeType.BACK;
+        if (processed[vertexTo] && entryTime[vertexTo] < entryTime[vertexFrom]) return EdgeType.CROSS;
+        if (processed[vertexTo] && entryTime[vertexTo] > entryTime[vertexFrom]) return EdgeType.FORWARD;
+        return EdgeType.UNKNOWN;
     }
 }
