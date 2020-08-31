@@ -1,9 +1,16 @@
-import LeetCode.DynamicProgramming.Medium.HouseRobberII;
-import LeetCode.Graph.Medium.MinimumHeightTrees;
+import LeetCode.Graph.Medium.EvaluateDivision;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        MinimumHeightTrees task = new MinimumHeightTrees();
-        System.out.println(task.findMinHeightTrees(6, new int[][]{{0, 3}, {1, 3}, {2, 3}, {4, 3}, {5, 4}}));
+        EvaluateDivision task = new EvaluateDivision();
+        System.out.println(Arrays.toString(task.calcEquation(
+                List.of(List.of("a", "b"), List.of("b", "c")),
+                new double[]{2.0, 3.0},
+                List.of(List.of("a", "c"), List.of("b", "a"), List.of("a", "e"))
+                ))
+        );
     }
 }
