@@ -1,16 +1,8 @@
-import LeetCode.Graph.Medium.EvaluateDivision;
-
-import java.util.Arrays;
-import java.util.List;
+import LeetCode.DynamicProgramming.Medium.UniquePaths;
 
 public class Main {
     public static void main(String[] args) {
-        EvaluateDivision task = new EvaluateDivision();
-        System.out.println(Arrays.toString(task.calcEquation(
-                List.of(List.of("a", "b"), List.of("b", "c")),
-                new double[]{2.0, 3.0},
-                List.of(List.of("a", "c"), List.of("b", "a"), List.of("a", "e"))
-                ))
-        );
+        UniquePaths task = new UniquePaths();
+        System.out.println(task.uniquePaths(1 ,1));
     }
 }
