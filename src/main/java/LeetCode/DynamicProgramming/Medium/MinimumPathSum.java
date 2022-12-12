@@ -1,6 +1,6 @@
 package LeetCode.DynamicProgramming.Medium;
 
-// https://leetcode.com/problems/minimum-path-sum/description/
+//  https://leetcode.com/problems/minimum-path-sum/description/
 
 public class MinimumPathSum {
 
